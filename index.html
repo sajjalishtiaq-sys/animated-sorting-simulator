@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Algorithm Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Sorting Algorithm Simulator</h1>
+    </header>
+    <main>
+        
+        <div class="container">
+            <!-- Left Section: Algorithm Selection & Info -->
+            <div class="left-section">
+                <form id="sortingForm">
+                    <label for="numberInput">Enter numbers (comma-separated):</label>
+                    <input type="text" id="numberInput" name="numberInput">
+                    
+                    <label for="algorithm">Select Algorithm:</label>
+                    <select id="algorithm" name="algorithm">
+                        <option value="selectionSort">Selection Sort</option>
+                        <option value="insertionSort">Insertion Sort</option>
+                        <option value="mergeSort">Merge Sort</option>
+                        <option value="quickSort">Quick Sort</option>
+                        <option value="bubbleSort">Bubble Sort</option>
+                    </select>
+
+                    <button type="button" id="startButton" onclick="startSorting()">Start Sorting</button>
+                    <button type="button" id="helpButton">Help</button>
+                    
+                    <!-- Move Help Section Here -->
+                    <div id="helpSection" style="display: none;">
+                        <h3>How to Use the Simulator</h3>
+                        <ul>
+                            <li>Enter numbers separated by commas (e.g., 5,3,8,6).</li>
+                            <li>Select a sorting algorithm from the dropdown.</li>
+                            <li>Click "Start" to visualize the sorting process.</li>
+                            <li>Use "Pause" to pause/resume the animation.</li>
+                            <li>Use "Reset" to clear and start again.</li>
+                            <li>Use the speed slider to adjust animation speed.</li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+            <!-- Right Box: Sorting Results & Algorithm Details -->
+            <div id="results" >
+                <h3>Results</h3>
+                <p><strong>Unsorted List:</strong> <span id="unsortedList">N/A</span></p>
+                <p><strong>Sorted List:</strong> <span id="sortedList">N/A</span></p>
+                
+                <h3>Algorithm Details</h3>
+                <div id="algorithmInfo">
+                    <p>Select an algorithm to see its details.</p>
+                </div>
+            </div>
+            <!-- Right Section: Visualization  -->
+            <div class="right-section">
+                <div class="visualization-container">
+                    <!-- Box: Sorting Animation -->
+                    <div id="visualization" class="box"></div>
+                </div>
+
+                <!-- Controls -->
+                <div id="controls">
+                    <button id="startButton" onclick="startSorting()">Start</button>
+                    <button id="pauseButton" onclick="pauseAnimation()">Pause</button>
+                    <button id="resetButton" onclick="resetAnimation()">Reset</button>
+                    <label for="speedControl" class="label-speed">Speed:</label>
+                    <input type="range" id="speedControl" min="1" max="10" value="5" oninput="updateSpeed(this.value)">
+                </div> 
+            </div>
+        </div>
+        
+        
+    </main>
+    <footer>
+        <p>&copy; 2025 Sorting Algorithm Simulator</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
