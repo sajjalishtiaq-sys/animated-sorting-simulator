@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Algorithm Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard">
+        <h1>Sorting Algorithm Simulator</h1>
+        <form id="sortingForm">
+            <label for="numberInput">Enter numbers (comma-separated):</label>
+            <input type="text" id="numberInput" name="numberInput">
+            <label for="algorithm">Select Algorithm:</label>
+            <select id="algorithm" name="algorithm">
+                <option value="selectionSort">Selection Sort</option>
+                <!-- Add other algorithms here -->
+            </select>
+            <button type="button" onclick="startSorting()">Start Sorting</button>
+        </form>
+        <div id="controls">
+            <button id="startButton" onclick="startAnimation()">Start</button>
+            <button id="pauseButton" onclick="pauseAnimation()">Pause</button>
+            <button id="resetButton" onclick="resetAnimation()">Reset</button>
+            <label for="speedControl">Speed:</label>
+            <input type="range" id="speedControl" min="1" max="10" value="5" oninput="updateSpeed(this.value)">
+        </div>
+        <div id="visualization">
+            <!-- Visualization will be displayed here -->
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
